@@ -1,0 +1,26 @@
+# Directories
+node_modules/
+dist/
+reports/
+tmp/
+.cache/
+cache/
+coverage/
+.vscode/
+.scannerwork/
+
+# Logs
+*.Logs
+*lock
+env.yaml
+
+# Generated files
+.DS_Store
+ehthumbs.db
+Icon?
+Thumbs.db
+*.lock
+.vscode/
+
+# Properties
+.env
