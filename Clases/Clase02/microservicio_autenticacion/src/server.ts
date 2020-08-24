@@ -1,4 +1,5 @@
 import { ServerBootstrap, DatabaseBootstrap } from './bootstrap';
+import 'reflect-metadata';
 import app from './app';
 import { MessageUtil } from './utils';
 
