@@ -61,3 +61,17 @@
 ```
  docker images -f dangling=true -q | xargs docker rmi -f
 ```
+
+## Restricciones para los contenedores
+
+```
+ docker run -d --name mongo-server -p 27017:27017 -m 100mb --cpuset-cpus 0-1 mongo
+```
+
+## Crear volumen host
+
+### Bash
+
+```
+  docker run -d --name mongo-server1 -p 27017:27017 -v $(PWD)/data/db/:/data/db mongo
+```
