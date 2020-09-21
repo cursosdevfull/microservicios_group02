@@ -1,0 +1,8 @@
+version: '3'
+services:
+  web:
+    image: centos:7
+    container_name: web-python
+    command: python -m SimpleHTTPServer 8080
+    ports:
+      - '8086:8080'

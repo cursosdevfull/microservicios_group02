@@ -1,0 +1,3 @@
+PARA RENOMBRAR
+
+docker-compose -p webPython -f docker-compose-cmd.yml up -d

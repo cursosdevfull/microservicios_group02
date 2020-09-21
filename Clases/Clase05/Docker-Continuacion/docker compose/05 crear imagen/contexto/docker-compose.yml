@@ -1,0 +1,8 @@
+version: '3'
+services:
+  etl:
+    image: etl-main2
+    container_name: etl
+    build:
+      context: .
+      dockerfile: my-df

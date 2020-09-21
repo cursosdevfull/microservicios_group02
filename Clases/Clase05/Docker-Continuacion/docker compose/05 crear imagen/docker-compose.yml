@@ -1,0 +1,6 @@
+version: '3'
+services:
+  etl:
+    image: etl-main
+    container_name: etl
+    build: .

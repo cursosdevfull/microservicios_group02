@@ -1,0 +1,32 @@
+CREAR RED
+
+docker network create test-network
+
+CREAR RED CON PARÁMETROS
+
+docker network create -d bridge --subnet 172.124.20.0/24 --gateway 172.124.20.2 docker-test
+
+CREAR CONTENEDOR ASOCIADO A UNA RED
+
+docker run -d --name mongo-server5 --network docker-test mongo
+
+AGREGAR CONTENEDOR A UNA RED
+
+docker network connect docker-test mongo-server
+
+RETIRAR CONTENEDOR DE UNA RED
+
+docker network disconnect docker-test mongo-server
+
+ELIMINAR RED
+
+docker network rm test-network
+
+ASIGNAR IP A CONTENEDOR EN UNA RED
+
+docker run -d --name mongo-server5 --ip 172.124.20.8 --network docker-test -p 27021:27017 mongo
+
+CONTENEDOR SIN RED
+
+docker run -d --name mongo-server6 --network none -p 27021:27017 mongo
+

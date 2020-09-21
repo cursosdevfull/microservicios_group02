@@ -1,0 +1,9 @@
+version: '3'
+services:
+  web:
+    image: nginx
+    container_name: web1
+    ports:
+      - '8081:80'
+    volumes:
+      - '${PWD}/vegefoods:/usr/share/nginx/html'

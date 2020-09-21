@@ -1,0 +1,3 @@
+DOCKER COMPOSE EN BACKGROUND
+
+docker-compose -d up
