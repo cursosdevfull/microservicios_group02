@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy-backend
+  labels:
+    app: backend
+    env: dev
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: backend
+      env: dev
+  template:
+    metadata:
+      labels:
+        app: backend
+        env: dev
+    spec:
+      containers:
+        - name: k8s-backend
+          image: sergiohidalgocaceres/backend:1.0
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-backend
+  labels:
+    app: backend
+    env: dev
+spec:
+  selector:
+    app: backend
+    env: dev
+  ports:
+    - protocol: TCP
+      port: 9000
+      targetPort: 80
