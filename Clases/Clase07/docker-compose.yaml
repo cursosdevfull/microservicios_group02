@@ -1,0 +1,37 @@
+version: "3"
+
+services:
+  gateway:
+    container_name: "gateway"
+    build: ./api_gateway
+    ports:
+      - "80:80"
+    networks:
+      - network_microservicio
+  ms_auth:
+    container_name: "ms_auth"
+    build: ./microservicio_autenticacion
+    ports:
+      - "82:82"
+    networks:
+      - network_microservicio
+    depends_on:
+      - db_mongo
+  ms_authors:
+    container_name: "ms_authors"
+    build: ./microservicio_autores
+    ports:
+      - "81:81"
+    networks:
+      - network_microservicio
+    depends_on:
+      - db_mongo
+  db_mongo:
+    container_name: "db_mongo"
+    build: ./db_mongo
+    ports: 
+      - "27017:27017"
+    networks:
+      - network_microservicio
+networks:
+  network_microservicio:
